@@ -1,0 +1,14 @@
+
+<select [(ngModel)]="leagIndex" (ngModelChange)="changeValue($event)">
+  <option *ngIf="!!placeholderValue" value="0">{{placeholderValue}}</option>
+  <option *ngFor="let item of allLeags" [value]="item.strCountry">{{item.strCountry}}</option>
+</select>
+
+<div class="row">
+  <div class="col-md-5">
+    <app-equipe [league]="selectedLeague" (selectedClube)="setClube($event)"></app-equipe>
+  </div>
+  <div class="col-md-7">
+    <app-joueurs [teams]="selectedClube"></app-joueurs>
+  </div>
+</div>

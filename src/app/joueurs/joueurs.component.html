@@ -1,0 +1,12 @@
+<li *ngIf="clubeTeam.player">
+    <ul *ngFor="let item of clubeTeam.player">
+        <img *ngIf="item.strThumb" [src]="item.strThumb" class="picSize">
+        <div>
+            <span *ngIf="item.strPlayer">{{item.strPlayer}}</span><br>
+            <span *ngIf="item.dateBorn">{{item.dateBorn}}</span><br>
+            <span *ngIf="item.strWage">{{item.strWage}}</span><br>
+            <span *ngIf="item.strSigning">{{item.strSigning}}</span><br>
+        </div>
+    </ul>
+  </li>
+  <p *ngIf="!clubeTeam.player">No resulte</p>
